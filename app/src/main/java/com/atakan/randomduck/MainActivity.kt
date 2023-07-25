@@ -32,18 +32,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-
-        setContentView(binding.root)
-    }
-    private fun getNewDuck(): Response<Duck> {
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        lateinit var result : Response<Duck>
-        val randDuck = RetrofitMain.getInstance().create(DuckApi::class.java)
-        runBlocking {
-            result = randDuck.getRandomDuck()
+        binding.newBtn.setOnClickListener(){
+            lifecycleScope.launch{
+                var result = randDuck.getRandomDuck()
+                if(result != null){
+                    imageDuck = result.body()?.url
+                    withContext(Dispatchers.Main){
+                        Picasso.get().load(imageDuck).into(binding.duckImg)
+                    }
+                }
+            }
         }
-
-        return result
+        setContentView(binding.root)
     }
 }

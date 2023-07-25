@@ -4,15 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.DrawableRes
 import com.atakan.randomduck.databinding.ActivityMainBinding
-import com.squareup.picasso.Picasso
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-import retrofit2.Response
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -28,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             if(result != null){
                 imageDuck = result.body()?.url
                 withContext(Dispatchers.Main){
-                    Picasso.get().load(imageDuck).into(binding.duckImg)
+                    Glide.with(this@MainActivity).load(imageDuck).into(binding.duckImg)
                 }
             }
         }
@@ -37,8 +33,9 @@ class MainActivity : AppCompatActivity() {
                 var result = randDuck.getRandomDuck()
                 if(result != null){
                     imageDuck = result.body()?.url
+                    println(imageDuck)
                     withContext(Dispatchers.Main){
-                        Picasso.get().load(imageDuck).into(binding.duckImg)
+                        Glide.with(this@MainActivity).load(imageDuck).into(binding.duckImg)
                     }
                 }
             }

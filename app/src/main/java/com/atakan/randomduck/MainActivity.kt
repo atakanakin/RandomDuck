@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
                 var result = randDuck.getRandomDuck()
                 if(result != null){
                     imageDuck = result.body()?.url
-                    println(imageDuck)
                     withContext(Dispatchers.Main){
                         Glide.with(this@MainActivity).load(imageDuck).into(binding.duckImg)
                     }

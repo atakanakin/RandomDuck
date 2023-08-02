@@ -16,7 +16,7 @@ The Random Duck App is a simple Android application that displays random duck ph
 
 ## Getting Started
 
-To use the Random Duck Photo App, follow these steps:
+To use the Random Duck App, follow these steps:
 
 1. Clone the repository to your local machine:
 
@@ -44,9 +44,9 @@ implementation 'com.github.bumptech.glide:glide:4.12.0'
 
 - Base URL: https://random-d.uk/
 
-## Fetching a Random Duck Photo
+## Fetching a Random Duck Photo or Gif
 
-To fetch a random duck photo, you need to make a GET request to the API endpoint:
+To fetch a random duck photo or gif, you need to make a GET request to the API endpoint:
 
 - Endpoint: `/api/v2/random`
 
@@ -63,7 +63,7 @@ Example Response:
 }
 ```
 
-The response will contain a URL that points to the random duck photo. You can use this URL to load the duck photo into your Android app using Glide or any other image loading library.
+The response will contain a URL that points to the random duck photo. You can use this URL to load the duck photo or gif into your Android app using Glide or any other image loading library.
 
 ## API Terms of Use
 

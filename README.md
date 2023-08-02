@@ -12,7 +12,7 @@ The Random Duck App is a simple Android application that displays random duck ph
 
 ## Screenshots
 
-![](duck/1.png) ![](duck/2.png) ![](duck/3.png)
+<img src="duck/1.png" alt="Duck 1" width="300">    <img src="duck/2.png" alt="Duck 2" width="300">    <img src="duck/3.png" alt="Duck 3" width="300">
 
 ## Getting Started
 
